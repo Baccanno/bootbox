@@ -1,3 +1,7 @@
+#Bootbox - Hammer
+This fork mainly integrates hammer events (with no dependencies, you will have to include hammer yourself first) so it mainly adds full touch screen support with stopPropagation events on validation etc ...
+
+
 # Bootbox - Twitter Bootstrap powered alert, confirm and flexible dialog boxes
 
 Please see http://bootboxjs.com for full usage instructions, or head over to http://paynedigital.com/bootbox for
