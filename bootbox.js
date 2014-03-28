@@ -98,6 +98,7 @@
 
   function processCallback(e, dialog, callback) {
     e.preventDefault();
+    e.stopPropagation();
 
     // by default we assume a callback will get rid of the dialog,
     // although it is given the opportunity to override this
@@ -668,14 +669,14 @@
      * interaction with our dialog
      */
 
-    dialog.on("click", ".modal-footer button", function(e) {
+    dialog.hammer().on("tap", ".modal-footer button", function(e) {
       var callbackKey = $(this).data("bb-handler");
 
       processCallback(e, dialog, callbacks[callbackKey]);
 
     });
 
-    dialog.on("click", ".bootbox-close-button", function(e) {
+    dialog.hammer().on("tap", ".bootbox-close-button", function(e) {
       // onEscape might be falsy but that's fine; the fact is
       // if the user has managed to click the close button we
       // have to close the dialog, callback or not
